@@ -56,7 +56,7 @@ onMounted(async () => {
         <n-global-style />
         <n-message-provider>
         <n-space vertical>
-            <h2>Looking Glass Server</h2>
+            <h2 class="text-2xl">Looking Glass Server</h2>
             <LoadingCard v-if="appStore.connecting" />
             <template v-else>
                 <UtilitiesCard />
@@ -66,26 +66,26 @@ onMounted(async () => {
             <n-space justify="space-between">
                 <div>
                     <div style="margin-top: 10px">
-                    Powered by
-                    <n-button
-                        text
-                        tag="a"
-                        target="_blank"
-                        href="https://github.com/wikihost-opensource/als"
-                    >
-                        WIKIHOST Opensource - ALS (Github)
-                    </n-button>
+                        Powered by
+                        <n-button
+                            text
+                            tag="a"
+                            target="_blank"
+                            href="https://github.com/wikihost-opensource/als"
+                        >
+                            WIKIHOST Opensource - ALS (Github)
+                        </n-button>
                     </div>
                     <div>
-                    <p>{{ $t('memory_usage') }}: {{ appStore.memoryUsage }}</p>
+                        <p>{{ $t('memory_usage') }}: {{ appStore.memoryUsage }}</p>
                     </div>
                 </div>
                 <div>
                     <n-select
-                    v-model:value="currentLangCode"
-                    :options="langDropdown"
-                    style="min-width: 150px"
-                    @update:value="handleLangChange"
+                        v-model:value="currentLangCode"
+                        :options="langDropdown"
+                        style="min-width: 150px"
+                        @update:value="handleLangChange"
                     />
                 </div>
             </n-space>
