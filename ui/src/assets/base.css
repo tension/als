@@ -1,20 +1,35 @@
 @import url('https://fonts.font.im/css?family=Ubuntu,400,500|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Manrope:wght@200,300,400,500,600,700,800|TikTok+Sans:opsz,wght@200,300,400,500,600,700,800&display=swap');
 
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/forms";
 
 @theme {
-    --font-Ubuntu: "Ubuntu", sans-serif;
-    --font-Manrope: "Manrope", sans-serif;
-    --font-Roboto: "Roboto", sans-serif;
-    --font-Tiktok: "Tiktok Sans", sans-serif;
+    --font-Ubuntu: 'Ubuntu', sans-serif;
+    --font-Manrope: 'Manrope', sans-serif;
+    --font-Roboto: 'Roboto', sans-serif;
+    --font-Tiktok: 'Tiktok Sans', sans-serif;
 }
 :root {
-    transition: color 0.5s, background-color 0.5s;
+    transition:
+        color 0.5s,
+        background-color 0.5s;
     line-height: 1.6;
-    font-family: "Roboto",Inter,-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans GB,noto sans,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,FuckNelS0n,sans-serif;
+    font-family:
+        'Roboto',
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        PingFang SC,
+        Hiragino Sans GB,
+        noto sans,
+        Microsoft YaHei,
+        Helvetica Neue,
+        Helvetica,
+        Arial,
+        FuckNelS0n,
+        sans-serif;
     line-height: 1.5;
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: 400;
     color: #4b5563;
     color-scheme: light dark;

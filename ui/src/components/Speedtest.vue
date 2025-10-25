@@ -6,8 +6,8 @@ const appStore = useAppStore()
 </script>
 
 <template>
-  <n-card v-if="appStore.config.feature_librespeed || appStore.config.feature_filespeedtest">
-    <template #header> {{ $t('server_speedtest') }} </template>
-    <Librespeed v-if="appStore.config.feature_librespeed" />
-  </n-card>
+    <n-card v-if="appStore.config.feature_librespeed || appStore.config.feature_filespeedtest">
+        <template #header> {{ $t('server_speedtest') }} </template>
+        <Librespeed v-if="appStore.config.feature_librespeed" />
+    </n-card>
 </template>

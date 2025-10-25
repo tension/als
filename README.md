@@ -21,11 +21,11 @@ docker run -d --name looking-glass --restart always --network host wikihostinc/l
 # 你可以在 环境变量表 中找到 KEY
 # 例如，将监听端口改为 8080
 docker run -d \
-    --name lookingglass \
-    -e HTTP_PORT=80 \
-    --restart always \
-    --network host \
-    digitalvirtllc/looking-glass-server
+      --name lookingglass \
+      -e HTTP_PORT=80 \
+      --restart always \
+      --network host \
+      digitalvirtllc/looking-glass-server
 ``` 
 
 ## 环境变量表

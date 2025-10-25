@@ -23,11 +23,11 @@ If you don't want to use Docker , you can use the [compiled server](https://gith
 # you can find the KEY below the [Image Environment Variables]
 # for example, change the listen port to 8080
 docker run -d \
-    --name looking-glass \
-    -e HTTP_PORT=8080 \
-    --restart always \
-    --network host \
-    wikihostinc/looking-glass-server
+      --name looking-glass \
+      -e HTTP_PORT=8080 \
+      --restart always \
+      --network host \
+      wikihostinc/looking-glass-server
 ``` 
 
 ## Environment variable table

@@ -22,7 +22,7 @@ const currentLang = computed(() => {
     for (var i in langList) {
         const _lang = langList[i]
         if (_lang.value == currentLangCode.value) {
-        return _lang
+            return _lang
         }
     }
     return null
@@ -31,8 +31,8 @@ const currentLang = computed(() => {
 const langDropdown = computed(() => {
     return langList.map((item) => {
         return {
-        label: item.label,
-        value: item.value
+            label: item.label,
+            value: item.value
         }
     })
 })
@@ -55,41 +55,41 @@ onMounted(async () => {
     <n-config-provider :locale="lang" :date-locale="dateLang" :theme="theme">
         <n-global-style />
         <n-message-provider>
-        <n-space vertical>
-            <h2 class="text-2xl">Looking Glass Server</h2>
-            <LoadingCard v-if="appStore.connecting" />
-            <template v-else>
-                <UtilitiesCard />
-                <SpeedtestCard />
-                <TrafficCard v-if="appStore.config.feature_iface_traffic" />
-            </template>
-            <n-space justify="space-between">
-                <div>
-                    <div style="margin-top: 10px">
-                        Powered by
-                        <n-button
-                            text
-                            tag="a"
-                            target="_blank"
-                            href="https://github.com/wikihost-opensource/als"
-                        >
-                            WIKIHOST Opensource - ALS (Github)
-                        </n-button>
+            <n-space vertical>
+                <h2 class="text-2xl">Looking Glass Server</h2>
+                <LoadingCard v-if="appStore.connecting" />
+                <template v-else>
+                    <UtilitiesCard />
+                    <SpeedtestCard />
+                    <TrafficCard v-if="appStore.config.feature_iface_traffic" />
+                </template>
+                <n-space justify="space-between">
+                    <div>
+                        <div style="margin-top: 10px">
+                            Powered by
+                            <n-button
+                                text
+                                tag="a"
+                                target="_blank"
+                                href="https://github.com/wikihost-opensource/als"
+                            >
+                                WIKIHOST Opensource - ALS (Github)
+                            </n-button>
+                        </div>
+                        <div>
+                            <p>{{ $t('memory_usage') }}: {{ appStore.memoryUsage }}</p>
+                        </div>
                     </div>
                     <div>
-                        <p>{{ $t('memory_usage') }}: {{ appStore.memoryUsage }}</p>
+                        <n-select
+                            v-model:value="currentLangCode"
+                            :options="langDropdown"
+                            style="min-width: 150px"
+                            @update:value="handleLangChange"
+                        />
                     </div>
-                </div>
-                <div>
-                    <n-select
-                        v-model:value="currentLangCode"
-                        :options="langDropdown"
-                        style="min-width: 150px"
-                        @update:value="handleLangChange"
-                    />
-                </div>
+                </n-space>
             </n-space>
-        </n-space>
         </n-message-provider>
     </n-config-provider>
 </template>
