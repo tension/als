@@ -3,3 +3,6 @@ ui/public/speedtest_worker.js
 ui/pnpm-lock.yaml
 backend/embed/ui/
 tmp
+backend/.DS_Store
+backend/als/.DS_Store
+.DS_Store
