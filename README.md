@@ -1,19 +1,19 @@
-[![docker image build](https://github.com/wikihost-opensource/als/actions/workflows/docker-image.yml/badge.svg)](https://github.com/wikihost-opensource/als/actions/workflows/docker-image.yml)
+[![docker image build](https://github.com/tension/als/actions/workflows/docker-image.yml/badge.svg)](https://github.com/tension/als/actions/workflows/docker-image.yml)
 
 
-语言: [English](README.md) | 简体中文
+语言: 简体中文
 
 # ALS - 另一个 Looking-glass 服务器
 
 ## 快速开始 (Docker 环境)
 ```
-docker run -d --name looking-glass --restart always --network host wikihostinc/looking-glass-server
+docker run -d \
+      --name lookingglass \
+      -e HTTP_PORT=80 \
+      --restart always \
+      --network host \
+      digitalvirtllc/looking-glass-server
 ```
-
-如果不想使用 Docker , 您可以使用编译好的[服务器端](https://github.com/wikihost-opensource/als/releases)
-
-## 配置要求
- - 内存: 32MB 或更好
 
 ## 如何修改配置
 ```
@@ -45,7 +45,7 @@ docker run -d \
 | UTILITIES_IPERF3          | true                                                                   | true                                                       | iPerf3 服务器功能开关                                                               |
 | UTILITIES_IPERF3_PORT_MIN | 30000                                                                  | 30000                                                      | iPerf3 服务器端口范围 - 开始                                                         |
 | UTILITIES_IPERF3_PORT_MAX | 31000                                                                  | 31000                                                      | iPerf3 服务器端口范围 - 结束                                                           |
-| SPONSOR_MESSAGE           | "Test message" or "/tmp/als_readme.md" or "http://some_host/114514.md" | ''                                                         | 显示节点赞助商信息 (支持 Markdown, 支持 URL/文字/文件 (文件需要映射到容器中, 使用映射后的路径) |
+| SPONSOR_MESSAGE           | "http://some_host/1als.md" |  | 显示节点赞助商信息 (支持 Markdown, 支持 URL/文字/文件 (文件需要映射到容器中, 使用映射后的路径) |
 
 
 ## 功能
@@ -57,6 +57,9 @@ docker run -d \
 - [x] 在线 shell 盒子 (限制命令)
 - [x] [NextTrace](https://github.com/nxtrace/NTrace-core) 支持
 ## Thanks to
+
+https://github.com/wikihost-opensource/als
+
 https://github.com/librespeed/speedtest
 
 https://www.jetbrains.com/
