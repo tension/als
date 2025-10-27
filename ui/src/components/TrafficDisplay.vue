@@ -186,11 +186,11 @@ const updateSerieByInterface = (interfaceName, iface, date = null, pointname = n
 
     iface.ref.updateSeries([
         {
-            name: 'Receive',
+            name: '接收',
             data: toRaw(receiveDatas)
         },
         {
-            name: 'Send',
+            name: '发送',
             data: toRaw(sendDatas)
         }
     ])
@@ -207,34 +207,34 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <n-card hoverable>
-        <template #header> {{ $t('server_bandwidth_graph') }} </template>
-        <n-grid x-gap="12" cols="1 s:1 m:1 l:2 xl:2 2xl:2" responsive="screen">
-            <n-gi v-for="(interfaceData, interfaceName) in interfaces">
-                <n-card :title="interfaceName">
-                    <n-grid x-gap="12" :cols="2">
-                        <n-gi>
+    <div class="rounded-lg border border-gray-200 p-4">
+        <div class="text-xl"> {{ $t('server_bandwidth_graph') }} </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div v-for="(interfaceData, interfaceName) in interfaces">
+                <div :title="interfaceName">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div>
                             <h3>{{ $t('server_bandwidth_graph_receive') }}</h3>
                             <span class="traffic-display">
                                 {{ formatBytes(interfaceData.traffic.receive, 2, true) }} /
                                 {{ formatBytes(interfaceData.receive) }}
                             </span>
-                        </n-gi>
-                        <n-gi>
+                        </div>
+                        <div>
                             <h3>{{ $t('server_bandwidth_graph_sended') }}</h3>
                             <span class="traffic-display">
                                 {{ formatBytes(interfaceData.traffic.send, 2, true) }} /
                                 {{ formatBytes(interfaceData.send) }}
                             </span>
-                        </n-gi>
-                        <n-gi span="2">
+                        </div>
+                        <div class="col-span-2">
                             <component :is="interfaceData.theCompoent" />
-                        </n-gi>
-                    </n-grid>
-                </n-card>
-            </n-gi>
-        </n-grid>
-    </n-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style scoped>
