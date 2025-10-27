@@ -109,12 +109,12 @@ const createGraph = (interfaceName) => {
         series: [
             {
                 type: 'area',
-                name: 'Receive',
+                name: '接收',
                 data: []
             },
             {
                 type: 'area',
-                name: 'Send',
+                name: '发送',
                 data: []
             }
         ]
